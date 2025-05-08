@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunTech - Computer Education Excellence</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="top-half">
+            <div class="logo-nav-container">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" width="70" height="70" alt="Logo">
+                </div>
+                <nav id="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="students.html">Student Portal</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html" class="cta-button">Student Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+        <div class="bottom-half">
+            <div class="logo-text">
+                <h1>SUN TECH</h1>
+                <p>Computer Education Excellence</p>
+            </div>
+        </div>
+    </header>
+    
+    
+    
+
+    <section class="slideshow-container">
+        <div class="slides fade">
+            <img src="images/banner_resized.jpg" alt="Computer Education">
+            <div class="slide-caption">
+                <h2 id="typing-headline">Welcome to SunTech</h2>
+                <p>Empowering students with cutting-edge technology education</p>
+                <a href="courses.html" class="btn primary-btn">Explore Courses</a>
+            </div>
+        </div>
+
+        <div class="slides fade">
+            <img src="images/slide3.png" alt="Programming Course">
+            <div class="slide-caption">
+                <h2>Learn Programming</h2>
+                <p>Master the art of coding with our expert instructors</p>
+                <a href="courses.html" class="btn primary-btn">View Programs</a>
+            </div>
+        </div>
+
+        <div class="slides fade">
+            <img src="images/banner3_resized.jpg" alt="Web Development">
+            <div class="slide-caption">
+                <h2>Web Development</h2>
+                <p>Create stunning websites and web applications</p>
+                <a href="courses.html" class="btn primary-btn">Start Learning</a>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <section class="quick-search">
+        <div class="search-container">
+            <h2>Student Quick Search</h2>
+            <div class="search-box">
+                <input type="text" id="quick-roll-number" placeholder="Enter Roll Number (e.g., TEC001)">
+                <button onclick="quickSearch()">Search</button>
+            </div>
+            <div id="quick-search-result"></div>
+            <p class="search-note">For detailed information, visit the <a href="students.html">Student Portal</a></p>
+        </div>
+    </section>
+
+    <section class="features animate-on-scroll">
+        <h2 class="section-title">Why Choose SunTech?</h2>
+        <div class="features-container">
+            <div class="feature-card animate-on-scroll">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Modern Curriculum</h3>
+                <p>Our courses are regularly updated to include the latest technologies and industry practices.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Expert Instructors</h3>
+                <p>Learn from professionals with years of experience in both teaching and practical application.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <i class="fas fa-certificate"></i>
+                <h3>Recognized Certification</h3>
+                <p>Earn certificates that are recognized by leading technology companies worldwide.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <i class="fas fa-users"></i>
+                <h3>Small Batch Sizes</h3>
+                <p>We maintain small class sizes to ensure personalized attention for every student.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses-preview animate-on-scroll">
+        <h2 class="section-title">Popular Courses</h2>
+        <div class="courses-container">
+            <div class="course-card animate-on-scroll">
+                <div class="course-image">
+                    <img src="images/py logo.webp" alt="Web Development Course">
+                    <div class="course-badge">Beginner</div>
+                </div>
+                <div class="course-content">
+                    <h3>Python Programming</h3>
+                    <p>Learn HTML, CSS, JavaScript and modern frameworks to build responsive websites.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 12 Weeks</span>
+                        <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                    </div>
+                    <a href="courses.html#web-dev-101" class="btn course-btn">View Details</a>
+                </div>
+            </div>
+            <div class="course-card animate-on-scroll">
+                <div class="course-image">
+                    <img src="images/c-logo.webp" alt="Data Science Course">
+                    <div class="course-badge">Intermediate</div>
+                </div>
+                <div class="course-content">
+                    <h3>C Programming</h3>
+                    <p>Master data analysis, visualization, and machine learning techniques.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 16 Weeks</span>
+                        <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                    </div>
+                    <a href="courses.html#data-science" class="btn course-btn">View Details</a>
+                </div>
+            </div>
+            <div class="course-card animate-on-scroll">
+                <div class="course-image">
+                    <img src="images/c++ logo.webp" alt="Cybersecurity Course">
+                    <div class="course-badge">Advanced</div>
+                </div>
+                <div class="course-content">
+                    <h3>C++ Programming</h3>
+                    <p>Develop skills to protect systems and networks from digital attacks.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 14 Weeks</span>
+                        <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                    </div>
+                    <a href="courses.html#cybersecurity" class="btn course-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="view-all-container">
+            <a href="courses.html" class="btn view-all-btn">View All Courses</a>
+        </div>
+    </section>
+
+    <section class="stats animate-on-scroll">
+        <div class="stats-container">
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number" data-count="1500">0</div>
+                <p>Students Enrolled</p>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number" data-count="25">0</div>
+                <p>Expert Instructors</p>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number" data-count="15">0</div>
+                <p>Courses Offered</p>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number" data-count="95">0</div>
+                <p>Placement Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials animate-on-scroll">
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="testimonial-slider" id="testimonial-slider">
+            <div class="testimonial-slide animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"The instructors at TechEdu are incredibly knowledgeable and supportive. I went from knowing nothing about programming to landing a job as a junior developer in just 6 months!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/student1.jpg" alt="Student 1">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Web Development Graduate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"The practical approach to learning at TechEdu made all the difference. The hands-on projects prepared me for real-world challenges in my new role as a data analyst."</p>
+                    <div class="testimonial-author">
+                        <img src="images/student2.jpg" alt="Student 2">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Data Science Graduate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"I appreciated the structured curriculum and the way complex concepts were broken down. The career support team was instrumental in helping me secure my first tech job."</p>
+                    <div class="testimonial-author">
+                        <img src="images/student3.jpg" alt="Student 3">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <p>Cybersecurity Graduate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button id="prev-testimonial" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots" id="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button id="next-testimonial" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Start Your Tech Journey?</h2>
+            <p>Join thousands of successful graduates who have transformed their careers with SunTech.</p>
+            <div class="cta-buttons">
+                <a href="courses.html" class="btn primary-btn">Explore Courses</a>
+                <a href="contact.html" class="btn secondary-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About SunTech</h3>
+                <p>SunTech is a premier computer education institute dedicated to providing quality education in various technology domains.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="students.html">Student Portal</a></li>
+                    <li><a href="staff.html">Our Staff</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-courses">
+                <h3>Our Courses</h3>
+                <ul>
+                    <li><a href="courses.html#web-dev-101">Web Development</a></li>
+                    <li><a href="courses.html#data-science">Data Science</a></li>
+                    <li><a href="courses.html#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="courses.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="courses.html#python-basics">Python Programming</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Thirumanur,Ariyalur(Dt),Tamilnadu,Pin-621715</p>
+                <p><i class="fas fa-phone"></i>+91 9629743111</p>
+                <p><i class="fas fa-envelope"></i>suntech1851@gmail.com</p>
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SunTech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/slideshow.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/stats-counter.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

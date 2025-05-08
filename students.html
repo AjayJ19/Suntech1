@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Management</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+      color: #d32f2f;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #d32f2f;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a30000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 700px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      table {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Access -->
+  <script>
+    const adminPassword = "admin123"; // Change password here
+    if (!sessionStorage.getItem("adminAccess")) {
+      const input = prompt("Enter Admin Password:");
+      if (input === adminPassword) {
+        sessionStorage.setItem("adminAccess", true);
+      } else {
+        alert("Incorrect password. Access denied.");
+        document.body.innerHTML = "<h2 style='text-align:center;margin-top:100px;'>Access Denied</h2>";
+      }
+    }
+  </script>
+
+  <div class="container">
+    <h2>Student Management System</h2>
+
+    <h3>Add New Student</h3>
+    <input type="text" id="newRollNumber" placeholder="Roll Number" />
+    <input type="text" id="newName" placeholder="Name" />
+    <input type="text" id="newCourse" placeholder="Course" />
+    <input type="text" id="newDepartment" placeholder="Department" />
+    <input type="text" id="newYear" placeholder="Year" />
+    <input type="text" id="newFeeStatus" placeholder="Fee Status (Paid/Unpaid)" />
+    <input type="text" id="newCourseCompletion" placeholder="Course Completion (Yes/No)" />
+    <button onclick="handleAddStudent()">Add Student</button>
+
+    <h3>Search Student</h3>
+    <input type="text" id="rollNumber" placeholder="Enter Roll Number" />
+    <button onclick="searchStudent()">Search</button>
+
+    <div id="resultSection" class="hidden">
+      <h3>Student Details</h3>
+      <div id="studentDetails"></div>
+    </div>
+
+    <div id="editStudentSection" class="hidden">
+      <h3>Edit Student</h3>
+      <input type="text" id="editName" placeholder="Name" />
+      <input type="text" id="editCourse" placeholder="Course" />
+      <input type="text" id="editDepartment" placeholder="Department" />
+      <input type="text" id="editYear" placeholder="Year" />
+      <input type="text" id="editFeeStatus" placeholder="Fee Status" />
+      <input type="text" id="editCourseCompletion" placeholder="Course Completion" />
+      <button onclick="handleEditStudent(event)">Update Student</button>
+    </div>
+
+    <button onclick="listAllStudents()">List All Students</button>
+    <div id="studentTable" class="hidden"></div>
+  </div>
+
+  <!-- Firebase & Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, set, get, update, remove, child } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAlRQuhuM4aK6bXa2JOCYRW1GWmfRPmVVQ",
+      authDomain: "suntech-2380c.firebaseapp.com",
+      databaseURL: "https://suntech-2380c-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      projectId: "suntech-2380c",
+      storageBucket: "suntech-2380c.appspot.com",
+      messagingSenderId: "890003891352",
+      appId: "1:890003891352:web:5d649f4c8faa82dd82dced",
+      measurementId: "G-KDS6EDM00S"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Add student
+    window.handleAddStudent = async function () {
+      const data = {
+        rollNumber: document.getElementById("newRollNumber").value.trim(),
+        name: document.getElementById("newName").value.trim(),
+        course: document.getElementById("newCourse").value.trim(),
+        department: document.getElementById("newDepartment").value.trim(),
+        year: document.getElementById("newYear").value.trim(),
+        feeStatus: document.getElementById("newFeeStatus").value.trim(),
+        courseCompletion: document.getElementById("newCourseCompletion").value.trim()
+      };
+
+      if (!data.rollNumber) {
+        alert("Roll number is required");
+        return;
+      }
+
+      const refPath = ref(db, `students/${data.rollNumber}`);
+      const snapshot = await get(refPath);
+      if (snapshot.exists()) {
+        alert("Student already exists!");
+        return;
+      }
+
+      await set(refPath, data);
+      alert("Student added successfully!");
+    };
+
+    // Search student
+    window.searchStudent = async function () {
+      const rollNumber = document.getElementById("rollNumber").value.trim();
+      const refPath = ref(db, `students/${rollNumber}`);
+      const snapshot = await get(refPath);
+
+      if (snapshot.exists()) {
+        const s = snapshot.val();
+        displayStudentDetails(s);
+        populateEditForm(s);
+      } else {
+        alert("Student not found.");
+      }
+    };
+
+    function displayStudentDetails(s) {
+      document.getElementById("resultSection").classList.remove("hidden");
+      document.getElementById("studentDetails").innerHTML = `
+        <p><strong>Roll:</strong> ${s.rollNumber}</p>
+        <p><strong>Name:</strong> ${s.name}</p>
+        <p><strong>Course:</strong> ${s.course}</p>
+        <p><strong>Department:</strong> ${s.department}</p>
+        <p><strong>Year:</strong> ${s.year}</p>
+        <p><strong>Fee Status:</strong> ${s.feeStatus}</p>
+        <p><strong>Course Completed:</strong> ${s.courseCompletion}</p>
+        <button onclick="deleteStudent('${s.rollNumber}')">Delete</button>
+      `;
+    }
+
+    function populateEditForm(s) {
+      document.getElementById("editStudentSection").classList.remove("hidden");
+      document.getElementById("editName").value = s.name;
+      document.getElementById("editCourse").value = s.course;
+      document.getElementById("editDepartment").value = s.department;
+      document.getElementById("editYear").value = s.year;
+      document.getElementById("editFeeStatus").value = s.feeStatus;
+      document.getElementById("editCourseCompletion").value = s.courseCompletion;
+      window.editingRoll = s.rollNumber;
+    }
+
+    window.handleEditStudent = async function (e) {
+      e.preventDefault();
+      const updated = {
+        name: document.getElementById("editName").value.trim(),
+        course: document.getElementById("editCourse").value.trim(),
+        department: document.getElementById("editDepartment").value.trim(),
+        year: document.getElementById("editYear").value.trim(),
+        feeStatus: document.getElementById("editFeeStatus").value.trim(),
+        courseCompletion: document.getElementById("editCourseCompletion").value.trim()
+      };
+
+      await update(ref(db, `students/${window.editingRoll}`), updated);
+      alert("Student updated successfully.");
+      searchStudent();
+    };
+
+    window.deleteStudent = async function (rollNumber) {
+      if (confirm("Delete student?")) {
+        await remove(ref(db, `students/${rollNumber}`));
+        alert("Student deleted.");
+        document.getElementById("resultSection").classList.add("hidden");
+        document.getElementById("editStudentSection").classList.add("hidden");
+      }
+    };
+
+    // List all students
+    window.listAllStudents = async function () {
+      const studentTable = document.getElementById("studentTable");
+      studentTable.innerHTML = "";
+      studentTable.classList.remove("hidden");
+
+      const snapshot = await get(ref(db, "students"));
+      if (!snapshot.exists()) {
+        studentTable.innerHTML = "<p>No students found.</p>";
+        return;
+      }
+
+      const data = snapshot.val();
+      let tableHTML = `<table><tr>
+        <th>Roll</th><th>Name</th><th>Course</th><th>Dept</th><th>Year</th><th>Fee</th><th>Completed</th>
+      </tr>`;
+      Object.values(data).forEach(s => {
+        tableHTML += `<tr>
+          <td>${s.rollNumber}</td>
+          <td>${s.name}</td>
+          <td>${s.course}</td>
+          <td>${s.department}</td>
+          <td>${s.year}</td>
+          <td>${s.feeStatus}</td>
+          <td>${s.courseCompletion}</td>
+        </tr>`;
+      });
+      tableHTML += "</table>";
+      studentTable.innerHTML = tableHTML;
+    };
+  </script>
+
+</body>
+</html>

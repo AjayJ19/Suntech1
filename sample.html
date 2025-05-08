@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .header {
+      height: 150px;
+    }
+
+    .top-header {
+      height: 60%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .top-header img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+    }
+
+    .bottom-header {
+      height: 40%;
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 40px;
+      color: white;
+    }
+
+    .bottom-header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .bottom-header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="top-header">
+      <img src="images/logo.jpg" alt="Logo">
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Student Portal</a>
+        <a href="#">Our Staff</a>
+        <a href="#">Courses</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Student Login</a>
+      </div>
+    </div>
+    <div class="bottom-header">
+      <h1>SUN TECH</h1>
+      <p>Computer Education Excellence</p>
+    </div>
+  </div>
+
+</body>
+</html>

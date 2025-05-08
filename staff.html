@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff - TechEdu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="animate-slide-in-up">
+    <header class="sticky-header">
+        <div class="top-half">
+            <div class="logo-nav-container">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" width="70" height="70" alt="Logo">
+                </div>
+                <nav id="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="students.html">Student Portal</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html" class="cta-button">Student Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+        <div class="bottom-half">
+            <div class="logo-text">
+                <h1>SUN TECH</h1>
+                <p>Computer Education Excellence</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <h1>Our Institution Heads</h1>
+        <p>Meet our dedicated team of educators and administrators</p>
+    </section>
+
+    <section class="staff-intro">
+        <div class="intro-content animate-fade-in-out">
+            <h2>Our Teaching Philosophy</h2>
+            <div class="content-group">
+                <div class="content-item">
+                    <p>At SunTech, we believe in a hands-on, practical approach to computer education. Our instructors are not just teachers but industry professionals who bring real-world experience to the classroom.</p>
+                    <p>Our staff is committed to providing personalized attention to each student, ensuring they receive the guidance and support needed to excel in their chosen field.</p>
+                </div>
+                <div class="content-item">
+                    <p>We focus on fostering a collaborative learning environment where students can engage with peers and instructors alike. Our curriculum is designed to adapt to the ever-changing tech landscape, ensuring our students are always ahead of the curve.</p>
+                    <p>Continuous feedback and mentorship are integral to our teaching philosophy, helping students to grow and succeed in their careers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="staff-search">
+        <div class="search-container">
+            <h2>Find Staff Member</h2>
+            <div class="search-box">
+                <input type="text" id="staff-search-input" placeholder="Search by name or department" aria-label="Search staff">
+                <button onclick="searchStaff()">Search</button>
+            </div>
+            <div id="staff-search-result"></div>
+        </div>
+    </section> -->
+
+    <!-- <section class="staff-categories">
+        <h2 class="section-title">Our Team</h2>
+        
+        <div class="category-section" id="leadership">
+            <h3 class="category-title">Leadership Team</h3>
+            <div class="staff-container">
+                <div class="staff-card" data-department="leadership">
+                    <div class="staff-image" style="width: 150px; height: 150px;">
+                        <img src="images/staff1.jpg" alt="Dr. Robert Chen" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Dr. Robert Chen</h3>
+                        <p class="staff-position">Director</p>
+                        <p class="staff-qualification">Ph.D. in Computer Science</p>
+                        <p class="staff-experience">20+ years of experience in academia and industry</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> robert.chen@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 101</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button>
+                            <div class="staff-bio">
+                                <p>Dr. Chen has led numerous research projects in artificial intelligence and machine learning. Before joining TechEdu, he worked as a senior researcher at Tech Innovations Inc. and taught at prestigious universities. He is passionate about making technology education accessible to all.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card" data-department="leadership">
+                    <div class="staff-image" style="width: 150px; height: 150px;">
+                        <img src="images/staff2.jpg" alt="Dr. Sarah Williams" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Dr. Sarah Williams</h3>
+                        <p class="staff-position">Academic Director</p>
+                        <p class="staff-qualification">Ph.D. in Educational Technology</p>
+                        <p class="staff-experience">15+ years of experience in curriculum development</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> sarah.williams@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 102</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button>
+                            <div class="staff-bio">
+                                <p>Dr. Williams specializes in designing innovative educational programs that bridge theoretical knowledge and practical skills. She has published numerous papers on technology education methodologies and has been instrumental in developing TechEdu's comprehensive curriculum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="category-section" id="faculty">
+            <h3 class="category-title">Head Of The Institution</h3>
+            <div class="staff-container">
+                <div class="staff-card" data-department="web development">
+                    <div class="staff-image" style="width: 150px; height: 150px;">
+                        <img src="images/sir.png" alt="Prof. Michael Johnson" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Dr.K.Sundaresan</h3>
+                        <p class="staff-position">Board of Examinations</p>
+                        <p class="staff-qualification">Ph.D</p>
+                        <p class="staff-experience">10+ years of experience</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> michael.johnson@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 201</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <!-- <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button> -->
+                            <div class="staff-bio">
+                                <p>Dr.K.Sundaresan is a full-stack developer with expertise in modern web frameworks. He has worked on numerous high-profile web applications and is passionate about teaching the next generation of web developers. His teaching approach emphasizes practical, project-based learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card" data-department="data science">
+                    <div class="staff-image" style="width: 150px; height: 150px;">
+                        <img src="images/mam.png" alt="Dr. Priya Patel" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Mrs.C.Sangeetha</h3>
+                        <p class="staff-position">Director</p>
+                        <p class="staff-qualification">M.Sc., M.Phil.,B.Ed</p>
+                        <p class="staff-experience">8+ years of experience</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> priya.patel@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 202</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <!-- <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button> -->
+                            <div class="staff-bio">
+                                <p>Mrs.C.Sangeetha has extensive experience in data analysis, machine learning, and statistical modeling. She has worked with major corporations to implement data-driven solutions and has published research on predictive analytics. Her courses combine theoretical foundations with real-world applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card" data-department="cybersecurity">
+                    <div class="staff-image" style="width: 150px; height: 150px;">
+                        <img src="images/mam2.png" alt="James Wilson" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Mrs.K.Revathi</h3>
+                        <p class="staff-position">Training Co ordinator</p>
+                        <p class="staff-qualification"> M.Sc., B.Ed</p>
+                        <p class="staff-experience">12+ years of experience</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> james.wilson@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 203</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <!-- <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button> -->
+                            <div class="staff-bio">
+                                <p>Mrs.K.Revathi is a certified ethical hacker and security consultant who has helped numerous organizations strengthen their security infrastructure. His hands-on approach to teaching cybersecurity includes simulated security breaches and defense strategies, preparing students for real-world challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="staff-card" data-department="mobile development">
+                    <div class="staff-image">
+                        <img src="images/staff6.jpg" alt="Lisa Zhang">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Lisa Zhang</h3>
+                        <p class="staff-position">Mobile App Development Instructor</p>
+                        <p class="staff-qualification">M.S. in Software Engineering</p>
+                        <p class="staff-experience">7+ years of experience in mobile development</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> lisa.zhang@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 204</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button>
+                            <div class="staff-bio">
+                                <p>Lisa specializes in cross-platform mobile application development. She has developed numerous successful apps for both iOS and Android platforms. Her teaching focuses on user experience design, efficient coding practices, and app deployment strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- <div class="category-section" id="administrative">
+            <h3 class="category-title">Administrative Staff</h3>
+            <div class="staff-container">
+                <div class="staff-card" data-department="administration">
+                    <div class="staff-image">
+                        <img src="images/staff7.jpg" alt="David Thompson">
+                    </div>
+                    <div class="staff-details">
+                        <h3>David Thompson</h3>
+                        <p class="staff-position">Administrative Manager</p>
+                        <p class="staff-qualification">MBA in Education Management</p>
+                        <p class="staff-experience">10+ years of experience in educational administration</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> david.thompson@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 301</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button>
+                            <div class="staff-bio">
+                                <p>David oversees the day-to-day operations of TechEdu, ensuring that all administrative processes run smoothly. He is dedicated to creating an efficient and supportive environment for both students and staff. His expertise in educational management has been instrumental in TechEdu's growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card" data-department="student affairs">
+                    <div class="staff-image">
+                        <img src="images/staff8.jpg" alt="Jennifer Lee">
+                    </div>
+                    <div class="staff-details">
+                        <h3>Jennifer Lee</h3>
+                        <p class="staff-position">Student Affairs Coordinator</p>
+                        <p class="staff-qualification">M.A. in Education</p>
+                        <p class="staff-experience">5+ years of experience in student services</p>
+                        <div class="staff-contact">
+                            <p><i class="fas fa-envelope"></i> jennifer.lee@techedu.com</p>
+                            <p><i class="fas fa-phone"></i> Ext. 302</p>
+                        </div>
+                        <div class="staff-bio-toggle">
+                            <button class="bio-btn">View Bio <i class="fas fa-chevron-down"></i></button>
+                            <div class="staff-bio">
+                                <p>Jennifer is dedicated to enhancing the student experience at TechEdu. She coordinates student support services, organizes extracurricular activities, and serves as a liaison between students and faculty. Her approachable nature makes her a favorite among students seeking guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="staff-contact-info">
+        <h2 class="section-title">Contact Our Staff</h2>
+        <div class="contact-info-container">
+            <div class="contact-info">
+                <p>For general inquiries, please contact our main office:</p>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@techedu.com</p>
+                <p>Office Hours: Monday - Friday, 9:00 AM - 5:00 PM</p>
+            </div>
+            <div class="department-contacts">
+                <h3>Department Contacts</h3>
+                <ul>
+                    <li><strong>Academic Affairs:</strong> academic@SunTech.com | Ext. 100</li>
+                    <li><strong>Admissions:</strong> admissions@SunTech.com | Ext. 200</li>
+                    <li><strong>Student Services:</strong> student.services@SunTech.com | Ext. 300</li>
+                    <li><strong>Technical Support:</strong> support@SunTech.com | Ext. 400</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="staff-schedule">
+        <h2 class="section-title">Faculty Office Hours</h2>
+        <div class="schedule-container">
+            <table class="office-hours-table">
+                <thead>
+                    <tr>
+                        <th>Faculty Member</th>
+                        <th>Department</th>
+                        <th>Days</th>
+                        <th>Hours</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prof. Michael Johnson</td>
+                        <td>Web Development</td>
+                        <td>Monday, Wednesday</td>
+                        <td>2:00 PM - 4:00 PM</td>
+                        <td>Room 201</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Priya Patel</td>
+                        <td>Data Science</td>
+                        <td>Tuesday, Thursday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Room 205</td>
+                    </tr>
+                    <tr>
+                        <td>James Wilson</td>
+                        <td>Cybersecurity</td>
+                        <td>Wednesday, Friday</td>
+                        <td>1:00 PM - 3:00 PM</td>
+                        <td>Room 210</td>
+                    </tr>
+                    <tr>
+                        <td>Lisa Zhang</td>
+                        <td>Mobile Development</td>
+                        <td>Monday, Thursday</td>
+                        <td>3:00 PM - 5:00 PM</td>
+                        <td>Room 215</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="schedule-note">* Office hours are subject to change. Please check the online portal for the most up-to-date schedule.</p>
+        </div>
+    </section> -->
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Interested in Joining Our Team?</h2>
+            <p>We're always looking for talented educators and professionals to join our team.</p>
+            <a href="careers.html" class="btn primary-btn">View Openings</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About SunTech</h3>
+                <p>SunTech is a premier computer education institute dedicated to providing quality education in various technology domains.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="students.html">Student Portal</a></li>
+                    <li><a href="staff.html">Our Staff</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-courses">
+                <h3>Our Courses</h3>
+                <ul>
+                    <li><a href="courses.html#web-dev-101">Web Development</a></li>
+                    <li><a href="courses.html#data-science">Data Science</a></li>
+                    <li><a href="courses.html#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="courses.html#mobile-dev">Mobile App Development</a></li>
+                    <li><a href="courses.html#python-basics">Python Programming</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Thirumanur,Ariyalur(Dt),Tamilnadu,Pin-621715</p>
+                <p><i class="fas fa-phone"></i>+91 9629743111</p>
+                <p><i class="fas fa-envelope"></i>suntech1851@gmail.com</p>
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SunTech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/database.js"></script>
+    <script src="js/staff.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

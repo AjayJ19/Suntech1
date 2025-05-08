@@ -1,0 +1,376 @@
+/* === BASE STYLES === */
+/* (Add/Merge your original base styles here. This is a basic foundation.) */
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #ffff00; /* Often yellow, adjust as needed */
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --dark-bg: #222222;
+  --light-bg: #f4f6f8;  /* Slightly off-white */
+  --border-color: #dee2e6;
+  --accent-color: #ff6600; /* Example accent */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.12);
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7; /* Improved readability */
+  color: var(--text-color);
+  background-color: var(--light-text);
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed) ease;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Consistent padding */
+}
+
+/* Basic Section Styling */
+section {
+    padding: 60px 0; /* Vertical spacing */
+}
+section:nth-child(even) { /* Alternate background example */
+    /* background-color: var(--light-bg); */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem; /* Adjusted size */
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* Add BASE styles for header, logo, nav, footer, forms etc. */
+header.sticky-header {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Add display: flex, justify-content, align-items */
+}
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+/* Example Nav Link Hover Underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 50px 5% 30px;
+    margin-top: 60px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.footer-container h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+.footer-container ul li { margin-bottom: 8px; }
+.footer-container ul li a { color: rgba(255, 255, 255, 0.8); }
+.footer-container ul li a:hover { color: var(--light-text); }
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+/* Card Base Styles (Ensure these match your actual card classes) */
+.feature-card, .course-card, .value-card, .facility-card, .team-member, .testimonial-slide, .mission-box, .vision-box {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: box-shadow var(--transition-speed) ease, transform var(--transition-speed) ease;
+    text-align: center; /* Example alignment */
+}
+.feature-card i, .value-card i { /* Example icon styles */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.feature-card h3, .course-card h3, .value-card h3 /* etc */ {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+.feature-card p, .course-card p, .value-card p /* etc */ {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.feature-card:hover, .course-card:hover, .value-card:hover, .facility-card:hover, .team-member:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-5px); /* Add subtle lift */
+}
+
+
+/* === ANIMATION STYLES === */
+
+/* Button Hover Effects */
+.btn {
+    display: inline-block;
+    padding: 12px 30px; /* Slightly larger padding */
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.25s ease-out, background-color 0.25s ease-out, color 0.25s ease-out, box-shadow 0.25s ease-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-size: 1rem;
+}
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); /* Refined shadow */
+}
+.btn::before { /* Optional subtle fill */
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 0; height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* More subtle overlay */
+    transition: width var(--transition-speed) ease-out;
+    z-index: -1;
+}
+.btn:hover::before { width: 100%; }
+.primary-btn:hover { background-color: #d60000; color: var(--light-text); }
+.secondary-btn:hover { background-color: var(--primary-color); color: var(--light-text); }
+
+/* Course Filter Button Hover */
+.filter-btn {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    padding: 8px 18px; /* Adjusted padding */
+    border-radius: 20px;
+    background-color: #fff;
+    color: var(--text-color);
+    margin: 5px;
+    font-size: 0.9rem;
+}
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.filter-btn:hover:not(.active) {
+    background-color: #f8f9fa; /* Lighter hover */
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+}
+
+/* --- Scroll-Triggered Fade/Slide Animations --- */
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Shared initial state - Set via JS now for robustness */
+/* JS sets: opacity: 0; transform: translateY/X(40px); transition: ... */
+.animate-fade-in,
+.animate-slide-in-up,
+.animate-slide-in-left,
+.animate-slide-in-right {
+    /* This class mainly acts as a selector for JS */
+    /* Initial state (opacity: 0, transform) is applied via JS */
+    /* Transition is also applied via JS */
+    will-change: opacity, transform; /* Performance hint */
+}
+
+/* State when element becomes visible (triggered by JS adding .visible class) */
+/* JS adds this class, CSS defines the 'end' state */
+.animate-fade-in.visible,
+.animate-slide-in-up.visible,
+.animate-slide-in-left.visible,
+.animate-slide-in-right.visible {
+    opacity: 1;
+    transform: translate(0, 0); /* Final state */
+}
+
+
+/* --- Typing Animation (for About Page) --- */
+#about-typing-headline {
+    min-height: 1.2em; /* Prevent layout jump */
+    display: inline-block;
+    vertical-align: bottom;
+}
+#about-typing-headline::after { /* Cursor */
+    content: '|';
+    display: inline-block;
+    animation: typingCursor 0.75s infinite;
+    font-weight: normal;
+    margin-left: 4px;
+    color: inherit; /* Match headline color */
+    opacity: 1;
+    position: relative;
+}
+@keyframes typingCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Number Counter Style */
+.stat-number {
+    font-weight: 700; /* Bold */
+    font-size: 2.5em; /* Larger */
+    color: var(--primary-color); /* Use primary color */
+    display: inline-block; /* Ensure layout */
+    min-width: 40px; /* Prevent jumping */
+    text-align: center;
+}
+
+
+/* --- Optional Subtle Background/Footer Animations --- */
+/* (Keep commented out unless specifically desired and tested) */
+/*
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"><text x="20" y="40" font-size="14" fill="rgba(0,0,0,0.03)">01</text><text x="80" y="110" font-size="14" fill="rgba(0,0,0,0.03)">10</text></svg>');
+    background-repeat: repeat;
+    opacity: 0.6;
+    z-index: -10;
+    animation: floatBackground 90s linear infinite;
+    pointer-events: none;
+}
+@keyframes floatBackground {
+    from { background-position: 0 0; }
+    to { background-position: -2000px 2000px; }
+}
+*/
+
+/* --- Optional Rotating Icon in Footer --- */
+/* (Keep commented out unless specifically desired and tested) */
+/*
+footer { position: relative; overflow: hidden; }
+footer::after {
+    content: '\f121'; // Font Awesome code icon
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    bottom: 15px; right: 15px;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.04); // Lighter color for dark footer
+    animation: rotateIcon 45s linear infinite;
+    z-index: 0; // Above footer background but below content
+    opacity: 0.8;
+}
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+*/
+
+/* === RESPONSIVE STYLES === */
+/* (Add/Merge your original responsive styles here) */
+@media (max-width: 992px) {
+    .container { width: 95%; }
+    .section-title { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    /* Example: Stack footer columns */
+    .footer-container { flex-direction: column; align-items: center; text-align: center; }
+    .footer-container > div { width: 80%; margin-bottom: 20px; }
+
+    /* Example: Adjust nav for mobile */
+    /* .nav-links { display: none; ... } */
+    /* .nav-links.active { display: flex; ... } */
+    /* #hamburger-menu { display: block; } */
+}
+
+@media (max-width: 576px) {
+    section { padding: 40px 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 30px; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+    .filter-btn { padding: 6px 14px; font-size: 0.8rem; }
+} 
