@@ -70,5 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  // Set active class on current navigation link
+  const navLinksList = document.querySelectorAll('.nav-links a');
+  const currentPage = window.location.pathname.split('/').pop();
+  navLinksList.forEach(link => {
+    // Remove any existing 'active' class
+    link.classList.remove('active');
+    // If the link href matches the current page, set 'active'
+    if (link.getAttribute('href') === currentPage || (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
 })
 
